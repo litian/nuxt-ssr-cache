@@ -64,11 +64,11 @@ module.exports = function cacheRenderer(nuxt, config) {
 
     const renderer = nuxt.renderer;
     const renderRoute = renderer.renderRoute.bind(renderer);
-    renderer.renderRoute = function(route, context) {
+    renderer.renderRoute = async function(route, context) {
         // hopefully cache reset is finished up to this point.
         tryStoreVersion(cache, currentVersion);
 
-        const cacheKey = (config.cache.key || defaultCacheKeyBuilder)(route, context);
+        const cacheKey = await (config.cache.key || defaultCacheKeyBuilder)(route, context);
         if (!cacheKey) return renderRoute(route, context);
 
         function renderSetCache(){
