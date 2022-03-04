@@ -1,5 +1,5 @@
 # nuxt-ssr-cache
-[![NPM version](https://img.shields.io/npm/v/nuxt-ssr-cache.svg)](https://www.npmjs.com/package/nuxt-ssr-cache)
+forked from [arash16/nuxt-ssr-cache](https://github.com/arash16/nuxt-ssr-cache)
 
 Cache middleware for nuxt's SSR rendering.
 
